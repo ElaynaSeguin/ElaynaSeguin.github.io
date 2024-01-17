@@ -120,6 +120,7 @@ body {
   height: 345px; 
   top: 40px; 
   left: 534px; 
+  clip-path: circle();
 } 
 
 .desktop .p { 
