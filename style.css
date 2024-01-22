@@ -79,12 +79,11 @@ body {
 }
 .homepage .social-icons {
  position: absolute;
- width: 48px;
- height: 48px;
+ width: 700px;
+ height: 500px;
  top: 24px;
  left: 1343px;
-max-width: 50%;
-max-height: 50%
+
 }
 .homepage .vector {
  position: absolute;
