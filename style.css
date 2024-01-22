@@ -23,7 +23,7 @@ body {
  left: 0;
  background-color: #02534e;
  border-radius: 12px;
- filter: blur(4px);
+ /*filter: blur(4px);*/
 }
 .homepage .work-experience {
  position: absolute;
