@@ -2,7 +2,7 @@ body {
   margin: 0
 }
 
-/*.desktop {
+/*/*.desktop {
   background-color: #130629;
   display: flex;
   flex-direction: row;
@@ -42,7 +42,7 @@ body {
   letter-spacing: 0;
   line-height: normal;
 }
-*/
+
 
 .desktop { 
   background-color: #130629; 
@@ -298,5 +298,5 @@ body {
   font-size: 64px; 
   letter-spacing: 0; 
   line-height: normal; 
-}
+}*/
 
