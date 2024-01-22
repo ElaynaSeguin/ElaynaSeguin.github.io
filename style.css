@@ -88,12 +88,11 @@ max-height: 50%
 }
 .homepage .vector {
  position: absolute;
- width: 48px;
- height: 48px;
+ width: 200px;
+ height: 200px;
  top: 24px;
  left: 1259px;
-max-width: 50%;
-max-height: 50%
+
 }
 .homepage .text-wrapper-5 {
  position: absolute;
