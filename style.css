@@ -83,6 +83,8 @@ body {
  height: 48px;
  top: 24px;
  left: 1343px;
+max-width: 50%;
+max-height: 50%
 }
 .homepage .vector {
  position: absolute;
