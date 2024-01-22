@@ -92,6 +92,8 @@ max-height: 50%
  height: 48px;
  top: 24px;
  left: 1259px;
+max-width: 50%;
+max-height: 50%
 }
 .homepage .text-wrapper-5 {
  position: absolute;
