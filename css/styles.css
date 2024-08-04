@@ -1,0 +1,408 @@
+/* public/css/styles.css */
+
+/* -- BODY SETUP -- */
+body, h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  padding-left: 0;
+  /*Alternative background styles*/
+  /*background: linear-gradient(-45deg, #33ff77, #66ccff, #668cff, #a166ff, #8533ff, #ff6685, #ffc966, #a166ff);*/
+  /*background: linear-gradient(-45deg, #684eb3, #d47acf, #2d1544, #262370, #4e266f, #a56ad4, #77caf8, #8179eb, #482288, #767dd9);*/
+  /*#7c6fea, #5853c8, #342b6e, #2d2249, #493672, #2a1780, #6a5ee8, #6b85f0, #3c57f4, #3032a8*/
+  background: linear-gradient(-45deg, 
+  #2d1544 0%,
+  #003f6c 10%, 
+  #1e3a6c 20%, 
+  #003b5c 30%, 
+  #00aaff 45%, 
+  #00d1e0 60%,
+  #6f42c1 75%, 
+  #ff007f 100% 
+ );
+
+  background-size: 200% 200%;
+  animation: gradientBackground 15s ease infinite;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@keyframes gradientBackground {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* previous gradient background animation
+@keyframes gradientBackground {
+  0% { background-position: 0% 50%; }
+  20% { background-position: 50% 50%; }
+  40% { background-position: 100% 50%; }
+  60% { background-position: 50% 50%; }
+  80% { background-position: 0% 50%; }
+  100% { background-position: 0% 50%; }
+}*/
+
+/* -- NAVBAR SETUP -- */
+.navbar {
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #1e3a6c; 
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 1;
+}
+
+.navbar .navbar-container {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #00d1e0;
+  margin: 0 15px;
+}
+
+.navbar a:hover {
+  color: #ff007f;
+}
+
+/* -- CONTAINER SETUP -- */
+.container {
+  margin-top: 20vh; 
+  position: relative; 
+  padding-left: 0; 
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* -- INTRO SECTION SETUP -- */
+.intro-section {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: flex-start;
+  max-width: 100%; 
+  margin: 0 auto; 
+  padding: 20px; 
+  flex-wrap: nowrap; 
+}
+
+/* -- SCRIPTING TEXT SETUP -- */
+.intro-text {
+  flex: 2; /*2/3 screen space*/
+  margin-right: 20px;
+  padding: 0;
+}
+
+.intro-text h1 {
+  font-size: 6rem; 
+  color: #fff; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+}
+
+/* -- HOME IMAGE SETUP -- */
+.intro-image {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+}
+
+/* Right-centered image */
+.right-centered-img {
+  width: 100%;
+  max-width: none; 
+  height: auto; 
+}
+
+/* -- FOOTER SETUP -- */
+.footer {
+  width: 100%;
+  padding: 20px; 
+  background-color: #2d1544;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  color: #fff;
+  margin-top: auto;
+}
+
+.footer a {
+  color: #00d1e0;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  color: #ff007f;
+}
+
+/* -- STATIC TEXT SETUP -- */
+/* Used on main pages*/
+.static-white-text {
+  color: #e0e0e0;
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin: 60px auto;
+  padding: 30px;
+  width: 1000px;
+  position: relative;
+  z-index: 1;
+  margin-top: 50px;
+  
+}
+
+.static-white-text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  z-index: -1;
+}
+
+.static-white-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px; 
+  color: #fff;
+}
+
+.static-white-text h2 {
+  font-size: 2rem; 
+  margin-bottom: 5px; 
+  margin-top: 15px; 
+  color: rgb(0, 209, 224);
+  text-shadow: 0 0 5px rgba(0, 209, 224, 0.2);
+}
+
+.static-white-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  color: #00ff00;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.static-white-text p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #e0e0e0;
+}
+
+.static-white-text a {
+  color: #00d1e0; 
+  text-decoration: none; 
+  font-weight: bold; 
+}
+
+.static-white-text a:hover {
+  color: #ff007f; 
+  text-decoration: underline;
+}
+
+/* -- CONTACT PAGE TEXT SETUP -- */
+/*Very similar setup to static-white-text*/
+.static-white-text-left {
+  color: #e0e0e0;
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin: 60px 0;
+  padding: 20px;
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+  text-align: left;
+}
+
+.static-white-text-left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  z-index: -1;
+}
+.static-white-text-left h1 {
+  font-size: 2rem; 
+  margin-bottom: 20px; 
+  color: #fff; 
+}
+
+.static-white-text-left h2 {
+  font-size: 1.5rem; 
+  margin-bottom: 5px; 
+  color: #fff; 
+}
+
+.static-white-text-left p {
+  margin-bottom: 10px; 
+  color: #e0e0e0; 
+}
+
+.static-white-text-left a {
+  color: #00d1e0; 
+  text-decoration: none; 
+  font-weight: bold; 
+}
+
+.static-white-text-left a:hover {
+  color: #ff007f;
+  text-decoration: underline;
+}
+
+/* -- HOMEPAGE REVISION STYLING SETUP -- */
+.home-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow: hidden;
+}
+
+.home-container .intro-section {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: flex-start; 
+  max-width: 100%;
+  margin: 0 auto; 
+  padding: 0;
+  flex-wrap: nowrap;
+  width: 100vw;
+  height: 100vh;
+}
+
+.home-container .intro-text {
+  flex: 2; 
+  margin: 0; 
+  padding: 50px; 
+  margin-top: 150px;
+  overflow: hidden;
+}
+
+
+.home-container .intro-text h1 {
+  font-size: 6rem; 
+  color: #fff; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 0;
+}
+
+
+.home-container .intro-image {
+  flex: 1; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  margin: 0; 
+  padding: 0; 
+  overflow:auto;
+  height: 100vh;
+
+}
+
+/* Right-centered image */
+.home-container .right-centered-img {
+  width: 100%;
+  max-width: none; 
+  height: 100%;
+  object-fit: cover;
+}
+
+/* -- PROJECT PAGE TEMPLATE SETUP -- */
+.project-page {
+  display: flex;
+  flex-direction: column;
+  margin: 60px auto;
+  padding: 30px;
+  font-family: 'Roboto', sans-serif;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  max-width: 1000px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.project-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  z-index: -1;
+}
+
+.project-title {
+  font-size: 3rem;
+  margin: 0;
+  color: #fff;
+}
+
+.project-links {
+  margin-top: 10px;
+}
+
+.project-links a {
+  color: #00d1e0;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.project-links a:hover {
+  color: #ff007f;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 20px 0;
+  background: #000;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.project-summary {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .project-page {
+    text-align: center;
+  }
+}
+
