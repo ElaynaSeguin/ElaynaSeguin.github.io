@@ -1,9 +1,17 @@
 /* public/css/styles.css */
+/* -- DESKTOP VIEW SETUP -- */
 
 /* -- BODY SETUP -- */
 body, h1, p {
   margin: 0;
   padding: 0;
+}
+
+/* Disable scrolling on the entire page */
+body, html {
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
 }
 
 body {
@@ -49,6 +57,7 @@ body {
   100% { background-position: 0% 50%; }
 }*/
 
+/*@media only screen and (min-width: 769px) {*/
 /* -- NAVBAR SETUP -- */
 .navbar {
   width: 100%;
@@ -150,6 +159,14 @@ body {
 .footer a:hover {
   text-decoration: underline;
   color: #ff007f;
+}
+
+.static-text-wrapper {
+  display: block;
+  padding: 0;
+  margin-top: 140px; /* Adjust spacing for larger screens */
+  margin-bottom: 60px; /* Ensure space for footer */
+  top: 60px;
 }
 
 /* -- STATIC TEXT SETUP -- */
@@ -273,14 +290,21 @@ body {
 
 /* -- HOMEPAGE REVISION STYLING SETUP -- */
 .home-container {
+  /*margin: 0;
+  padding: 0;
+  display: flex;
+  overflow: hidden;*/
   margin: 0;
   padding: 0;
   display: flex;
+  flex-direction: column; /* Ensure content stacks vertically */
   overflow: hidden;
+  width: 100vw; /* Ensure full viewport width */
+  height: 100vh; /* Ensure full viewport height */
 }
 
 .home-container .intro-section {
-  display: flex; 
+  /*display: flex; 
   justify-content: space-between; 
   align-items: flex-start; 
   max-width: 100%;
@@ -288,7 +312,15 @@ body {
   padding: 0;
   flex-wrap: nowrap;
   width: 100vw;
-  height: 100vh;
+  height: 100vh;*/
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: auto;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevent horizontal overflow */
 }
 
 .home-container .intro-text {
@@ -315,8 +347,14 @@ body {
   align-items: center; 
   margin: 0; 
   padding: 0; 
-  overflow:auto;
+  overflow:hidden;
   height: 100vh;
+  /*flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  overflow: hidden; /* Prevent horizontal overflow */
 
 }
 
@@ -326,6 +364,7 @@ body {
   max-width: none; 
   height: 100%;
   object-fit: cover;
+  
 }
 
 /* -- PROJECT PAGE TEMPLATE SETUP -- */
@@ -399,13 +438,187 @@ body {
   font-size: 1.2rem;
   text-align: left;
 }
+/*}*/
 
-@media (max-width: 768px) {
-  .project-page {
+/* -- MOBILE VIEW SETUP -- */
+@media only screen and (max-width: 768px) {
+  /* Adjustments for the navbar */
+  .navbar .navbar-container {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+  
+  .navbar a {
+    margin: 10px 0;
+  }
+
+  .home-container {
+    flex-direction: column; /* Stack vertically for mobile */
+    min-height: 1800px; /* Increase min-height to extend the length */
+    height: 100%; /* Allow height to adjust based on content */
+  }
+
+  /* Adjustments for the intro section */
+  .intro-section {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px; /* Space for fixed navbar */
+  }
+  
+  .intro-text {
+    margin: 20px 0;
+    padding: 20px;
     text-align: center;
+  }
+
+  .intro-text h1 {
+    font-size: 3rem;
+  }
+  
+  .intro-image {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .right-centered-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+    
+  /* Adjustments for the container on Project and Contact pages */
+  .project-page .container,
+  .contact-page .container {
+    padding: 20px; /* Add padding inside the container */
+    margin-top: 100px; /* Space for navbar on mobile */
+    margin-bottom: 80px; /* Space for footer */
+    box-sizing: border-box; /* Include padding in width/height calculation */
+    /*min-height: calc(100vh - 180px); /* Ensure container takes full viewport height minus space for navbar and footer */
+    position: relative; /* Required for top positioning */
+    top: 0; /* Reset any previous top positioning */
+  }
+
+  /* Adjustments for the static text wrapper on Project and Contact pages */
+  .project-page .static-text-wrapper,
+  .contact-page .static-text-wrapper {
+    margin-top: 20px; /* Space above text */
+    margin-bottom: 60px; /* Space for footer */
+    box-sizing: border-box; /* Include padding in width/height calculation */
+    position: relative; /* Required for top positioning */
+    top: 0; /* Reset any previous top positioning */
+  }
+
+  /* Adjustments for the container on About page */
+  .about-page .container {
+    padding: 20px;
+    margin-top: 100px; /* Space for navbar */
+    margin-bottom: 60px; /* Space for footer */
+    box-sizing: border-box;
+    position: relative; /* Required for top positioning */
+    top: 0; /* Reset any previous top positioning */
+  }
+
+  /* Adjustments for static text wrapper on About page */
+  .about-page .static-text-wrapper {
+    margin-top: 20px; /* Space above text */
+    margin-bottom: 60px; /* Space for footer */
+    box-sizing: border-box;
+    position: relative; /* Required for top positioning */
+    top: 0; /* Reset any previous top positioning */
+  }
+
+  /* General container adjustments */
+  .container {
+    padding: 20px; /* Padding inside the container */
+    margin-top: 20px; /* Top margin for other pages */
+    margin-bottom: 60px; /* Bottom margin for footer space */
+    box-sizing: border-box; /* Include padding in width/height calculation */
+    
+    top: 0; /* Reset any previous top positioning */
+  }
+
+  /* Adjustments for the static text wrapper on all pages */
+  .static-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    margin-top: 20px;
+    margin-bottom: 60px; /* Ensure space for footer */
+    box-sizing: border-box;
+    position: relative; /* Required for top positioning */
+    top: 0; /* Reset any previous top positioning */
+  }
+
+  /* Adjustments for static white text */
+  .static-white-text,
+  .static-white-text-left {
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 60px; /* Adjusted to ensure space for footer */
+    font-size: 1rem;
+    box-sizing: border-box; /* Include padding in width/height calculation */
+    top: 0; /* Reset any previous top positioning */
+  }
+
+  .static-white-text h1,
+  .static-white-text-left h1 {
+    font-size: 1.8rem;
+  }
+
+  .static-white-text h2,
+  .static-white-text-left h2 {
+    font-size: 1.3rem;
+  }
+
+  .static-white-text h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Footer adjustments */
+  .footer {
+    padding: 10px;
+    background-color: #2d1544;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    position: relative; /* Ensure it does not overlap content */
+    margin-top: auto; /* Push footer to the bottom of its container */
+  }
+  
+  .footer a {
+    display: block;
+    margin: 5px 0;
+    color: #00d1e0;
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    color: #ff007f;
   }
 }
 
 
 
+/* -- DESKTOP VIEW SETUP -- */
+@media only screen and (min-width: 769px) {
+  /* Adjustments for the container */
+  .static-text-wrapper {
+    display: block; /* Normal block display for larger screens */
+    padding: 0;
+    margin-top: 40px; /* Adjust spacing for larger screens if needed */
+    margin-bottom: 60px; /* Ensure space for footer */
+  }
 
+  /* Adjustments for static text */
+  .static-white-text,
+  .static-white-text-left {
+    width: 80%; /* Adjust width for larger screens if needed */
+    margin: 20px auto; /* Center content */
+    padding: 20px;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+}
